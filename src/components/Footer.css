@@ -1,0 +1,264 @@
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #0a0a1a;
+}
+
+/* ── Video Background ─────────────────────────── */
+.footer-video-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.footer-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+}
+
+.footer-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #0a0a0f 0%,
+    rgba(10, 10, 26, 0.55) 30%,
+    rgba(5, 10, 40, 0.7) 70%,
+    #0a0a1a 100%
+  );
+}
+
+/* ── Animated Z ───────────────────────────────── */
+.footer-z-container {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  z-index: 1;
+  margin-bottom: 40px;
+}
+
+.footer-z {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 20px rgba(59, 91, 219, 0.6));
+}
+
+/* Pixel dots */
+.z-pixel-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.z-dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--accent-blue);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(59, 91, 219, 0.8);
+}
+
+/* ── Footer Content ───────────────────────────── */
+.footer-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 640px;
+  padding: 0 32px 80px;
+  text-align: center;
+}
+
+.footer-quote {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+}
+
+.footer-quote-author {
+  font-size: 0.9rem;
+  font-style: normal;
+  color: var(--accent-blue);
+}
+
+/* ── Contact ──────────────────────────────────── */
+.footer-contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-contact-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+}
+
+.footer-social-link:hover {
+  color: white;
+  background: rgba(59, 91, 219, 0.35);
+  border-color: var(--accent-blue);
+}
+
+.footer-social-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.footer-email:hover {
+  background: rgba(59, 91, 219, 0.2);
+  border-color: var(--accent-blue);
+}
+
+.footer-email span:first-child {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+}
+
+.footer-copy-badge {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.footer-email:hover .footer-copy-badge,
+.footer-copy-badge.visible {
+  opacity: 1;
+}
+
+.footer-copy-badge.visible {
+  color: #10b981;
+}
+
+/* ── Bottom bar ───────────────────────────────── */
+/* ── Apple Music widget ─────────────────────────────────────────── */
+.footer-music {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-music-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer-music-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fc3c44;
+  box-shadow: 0 0 8px #fc3c44aa;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.footer-music-embed {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+}
+
+.footer-nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.footer-nav-links a {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.2s ease;
+}
+
+.footer-nav-links a:hover {
+  color: white;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 480px) {
+  .footer-z-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .footer-content {
+    padding: 0 20px 80px;
+  }
+}

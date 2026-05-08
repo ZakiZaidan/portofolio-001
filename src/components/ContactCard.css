@@ -1,0 +1,50 @@
+.contact-card {
+  position: absolute;
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-label {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+}
+
+.contact-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 14px 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact-button:hover {
+  border-color: var(--accent-blue);
+  background: rgba(59, 91, 219, 0.1);
+}
+
+.contact-email {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.copy-status {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  transition: color 0.2s ease;
+}
+
+.copy-status.copied {
+  color: #10b981;
+}

@@ -1,0 +1,39 @@
+.quote-card {
+  position: absolute;
+  max-width: 320px;
+  padding: 24px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  z-index: 5;
+}
+
+.quote-content {
+  display: flex;
+  gap: 4px;
+}
+
+.quote-mark {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--accent-blue);
+  line-height: 1;
+}
+
+.quote-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.quote-author {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--accent-blue);
+  text-align: right;
+}

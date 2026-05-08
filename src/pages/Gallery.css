@@ -1,0 +1,261 @@
+/* ── Gallery Page ──────────────────────────────────────────────── */
+.gallery-page {
+  min-height: 100dvh;
+}
+
+/* Header */
+.gallery-header {
+  padding: 80px 0 48px;
+}
+
+.gallery-title {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.gallery-cursor {
+  display: inline-block;
+  color: var(--text-secondary);
+  margin-left: 2px;
+  font-weight: 300;
+}
+
+.gallery-subtitle {
+  font-size: 1rem;
+  color: var(--text-tertiary);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-top: -16px;
+  margin-bottom: 36px;
+}
+
+/* Filter pills */
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gallery-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  border-radius: 30px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-tertiary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  font-family: inherit;
+}
+
+.gallery-filter-btn:hover {
+  color: var(--text-secondary);
+  border-color: var(--border-light);
+}
+
+.gallery-filter-btn.active {
+  color: var(--text-primary);
+  border-color: var(--border-light);
+  background: var(--bg-card);
+}
+
+.gallery-filter-count {
+  font-size: 0.7rem;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+/* ── Masonry grid (CSS columns) ─────────────────────────────────── */
+.gallery-masonry {
+  column-count: 3;
+  column-gap: 14px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 900px) {
+  .gallery-masonry { column-count: 2; }
+}
+
+@media (max-width: 560px) {
+  .gallery-masonry { column-count: 1; }
+}
+
+/* ── Card ────────────────────────────────────────────────────────── */
+.gallery-card {
+  break-inside: avoid;
+  display: block;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  cursor: default;
+  transition: border-color 0.25s;
+}
+
+.gallery-card:hover {
+  border-color: var(--border-light);
+}
+
+/* image area */
+.gallery-card-img {
+  position: relative;
+  width: 100%;
+}
+
+/* placeholder: tinggi fixed agar tetap rapi */
+.gallery-card-img--fixed {
+  height: var(--card-h);
+  overflow: hidden;
+}
+
+/* gambar asli: ikut tinggi gambar, tidak terpotong */
+.gallery-card-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-card-img img {
+  transform: scale(1.04);
+}
+
+/* hover overlay */
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+/* caption bar */
+.gallery-card-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px 12px;
+  gap: 8px;
+}
+
+.gallery-card-title {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gallery-card-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Placeholder ─────────────────────────────────────────────────── */
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-placeholder-grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-placeholder-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-placeholder-num {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-family: monospace;
+}
+
+/* ── Lightbox ────────────────────────────────────────────────────── */
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+}
+
+.gallery-lightbox-inner {
+  max-width: min(90vw, 900px);
+  max-height: 90vh;
+  background: var(--bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-light);
+}
+
+.gallery-lightbox-inner img {
+  width: 100%;
+  max-height: calc(90vh - 56px);
+  object-fit: contain;
+  display: block;
+}
+
+.gallery-lightbox-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.gallery-lightbox-close {
+  background: none;
+  border: 1px solid var(--border-light);
+  color: var(--text-tertiary);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.gallery-lightbox-close:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}

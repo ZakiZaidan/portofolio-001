@@ -1,0 +1,38 @@
+.photo-stack {
+  /* Pusat canvas (1200,1000) = tengah layar                   */
+  /* PhotoStack area: 1220–1420 (w:200), 1290–1470 (h:180)     */
+  position: absolute;
+  top: 1290px;
+  left: 1220px;
+  z-index: 5;
+}
+
+.stack-label {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+.photos-container {
+  position: relative;
+  width: 200px;
+  height: 150px;
+}
+
+.stack-photo {
+  position: absolute;
+  width: 120px;
+  height: 90px;
+  border-radius: 8px;
+  border: 3px solid rgba(255,255,255,0.9);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.stack-photo:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}

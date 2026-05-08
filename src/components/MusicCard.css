@@ -1,0 +1,49 @@
+.music-card {
+  position: absolute;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  cursor: grab;
+  z-index: 10;
+}
+
+.music-card:active {
+  cursor: grabbing;
+}
+
+.music-card-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.music-card-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fc3c44;
+  box-shadow: 0 0 8px #fc3c44aa;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px #fc3c44aa; }
+  50% { opacity: 0.6; box-shadow: 0 0 5px #fc3c4470; }
+}
+
+.music-card-embed {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* iframe {
+  filter: invert(1) hue-rotate(180deg);
+} */
