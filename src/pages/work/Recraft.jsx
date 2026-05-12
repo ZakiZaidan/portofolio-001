@@ -3,11 +3,11 @@ import CaseStudyLayout, { Section, Prose, MetaRow, Highlight, ImageSlot } from '
 import { BarChart, DonutChart } from './Charts'
 
 const NAV = [
-  { id: 'overview',   label: 'Overview' },
-  { id: 'layanan',    label: 'Layanan' },
-  { id: 'fitur',      label: 'Fitur Unggulan' },
-  { id: 'dampak',     label: 'Dampak' },
-  { id: 'tech',       label: 'Tech Stack' },
+  { id: 'overview', label: 'Overview' },
+  { id: 'layanan', label: 'Layanan' },
+  { id: 'fitur', label: 'Fitur Unggulan' },
+  { id: 'dampak', label: 'Dampak' },
+  { id: 'tech', label: 'Tech Stack' },
 ]
 
 const TAGS = [
@@ -20,27 +20,27 @@ const TAGS = [
 const ACCENT = '#10b981'
 
 const impactData = [
-  { label: 'Produk',   value: 85 },
-  { label: 'Sampah',   value: 67 },
-  { label: 'Carbon',   value: 100 },
-  { label: 'Organik',  value: 33 },
+  { label: 'Produk', value: 85 },
+  { label: 'Sampah', value: 67 },
+  { label: 'Carbon', value: 100 },
+  { label: 'Organik', value: 33 },
 ]
 
 const layananSegments = [
-  { label: 'Jual Sampah',    value: 35, color: ACCENT },
+  { label: 'Jual Sampah', value: 35, color: ACCENT },
   { label: 'Bio-Sub Maggot', value: 20, color: '#0d7377' },
   { label: 'Produk Recycle', value: 25, color: '#3B5BDB' },
-  { label: 'Edukasi',        value: 12, color: '#7c3aed' },
-  { label: 'Donasi',         value: 8,  color: '#e67e22' },
+  { label: 'Edukasi', value: 12, color: '#7c3aed' },
+  { label: 'Donasi', value: 8, color: '#e67e22' },
 ]
 
 const TECH = [
-  { label: 'PHP / Laravel',    color: '#ef4444' },
-  { label: 'React',            color: '#61dafb' },
-  { label: 'MySQL',            color: '#f59e0b' },
-  { label: 'Gemini AI',        color: '#4285f4' },
-  { label: 'Leaflet Maps',     color: ACCENT },
-  { label: 'TailwindCSS',      color: '#38bdf8' },
+  { label: 'PHP / Laravel', color: '#ef4444' },
+  { label: 'React', color: '#61dafb' },
+  { label: 'MySQL', color: '#f59e0b' },
+  { label: 'Gemini AI', color: '#4285f4' },
+  { label: 'Leaflet Maps', color: ACCENT },
+  { label: 'TailwindCSS', color: '#38bdf8' },
 ]
 
 export default function Recraft() {
@@ -131,12 +131,12 @@ export default function Recraft() {
         </Prose>
         <div className="cs-card-grid-3">
           {[
-            { icon: '♻️', title: 'Jual Sampah',       desc: 'Layanan jual beli sampah anorganik terpilah (plastik, kertas, logam) dengan sistem penjemputan terjadwal dan harga transparan.' },
-            { icon: '🪲', title: 'Bio-Sub Maggot',    desc: 'Program terbaru: pengolahan sampah organik menggunakan larva BSF (Black Soldier Fly). Ramah lingkungan dan menghasilkan pupuk kompos berkualitas.' },
+            { icon: '♻️', title: 'Jual Sampah', desc: 'Layanan jual beli sampah anorganik terpilah (plastik, kertas, logam) dengan sistem penjemputan terjadwal dan harga transparan.' },
+            { icon: '🪲', title: 'Bio-Sub Maggot', desc: 'Program terbaru: pengolahan sampah organik menggunakan larva BSF (Black Soldier Fly). Ramah lingkungan dan menghasilkan pupuk kompos berkualitas.' },
             { icon: '📍', title: 'Direktori Fasilitas', desc: 'Peta interaktif untuk menemukan bank sampah, TPS, dan drop point terdekat di Balikpapan secara real-time.' },
-            { icon: '🛍️', title: 'Produk Recycle',    desc: 'Marketplace produk kreatif hasil daur ulang — dari furniture hingga aksesori — yang dibuat oleh pengrajin lokal mitra Recraft.' },
-            { icon: '📚', title: 'Edukasi',            desc: 'Konten artikel, video, dan workshop interaktif tentang pengelolaan sampah yang benar dan gaya hidup berkelanjutan.' },
-            { icon: '❤️', title: 'Donasi',             desc: 'Program donasi untuk mendukung inisiatif lingkungan dan pemberdayaan komunitas pengelola sampah di Balikpapan.' },
+            { icon: '🛍️', title: 'Produk Recycle', desc: 'Marketplace produk kreatif hasil daur ulang — dari furniture hingga aksesori — yang dibuat oleh pengrajin lokal mitra Recraft.' },
+            { icon: '📚', title: 'Edukasi', desc: 'Konten artikel, video, dan workshop interaktif tentang pengelolaan sampah yang benar dan gaya hidup berkelanjutan.' },
+            { icon: '❤️', title: 'Donasi', desc: 'Program donasi untuk mendukung inisiatif lingkungan dan pemberdayaan komunitas pengelola sampah di Balikpapan.' },
           ].map((c) => (
             <motion.div key={c.title} className="cs-info-card"
               variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}>
@@ -151,14 +151,38 @@ export default function Recraft() {
       {/* ── FITUR UNGGULAN ── */}
       <Section id="fitur" label="Fitur Unggulan" title="Yang Membuat Recraft Berbeda">
 
-        {/* Image slots — user drops screenshots here */}
+        {/* Screenshots Recraft */}
         <div className="cs-img-grid-2">
-          <ImageSlot label="Screenshot — Homepage Recraft" aspectRatio="4/3" />
-          <ImageSlot label="Screenshot — Marketplace Produk Recycle" aspectRatio="4/3" />
+          <div style={{ borderRadius: 12, overflow: 'hidden', aspectRatio: '4/3' }}>
+            <img
+              src="/recraft/home.png"
+              alt="Screenshot — Homepage Recraft"
+              style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top center', display: 'block' }}
+            />
+          </div>
+          <div style={{ borderRadius: 12, overflow: 'hidden', aspectRatio: '4/3' }}>
+            <img
+              src="/recraft/produk.png"
+              alt="Screenshot — Marketplace Produk Recycle"
+              style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top center', display: 'block' }}
+            />
+          </div>
         </div>
         <div className="cs-img-grid-2">
-          <ImageSlot label="Screenshot — Halaman Jual Sampah" aspectRatio="4/3" />
-          <ImageSlot label="Screenshot — Reca AI Chatbot" aspectRatio="4/3" />
+          <div style={{ borderRadius: 12, overflow: 'hidden', aspectRatio: '4/3' }}>
+            <img
+              src="/recraft/jualsampah.png"
+              alt="Screenshot — Halaman Jual Sampah"
+              style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top center', display: 'block' }}
+            />
+          </div>
+          <div style={{ borderRadius: 12, overflow: 'hidden', aspectRatio: '4/3' }}>
+            <img
+              src="/recraft/aichatbot.png"
+              alt="Screenshot — Reca AI Chatbot"
+              style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top center', display: 'block' }}
+            />
+          </div>
         </div>
 
         <Prose>
@@ -182,7 +206,7 @@ export default function Recraft() {
         <motion.div className="cs-stats-grid"
           variants={{ visible: { transition: { staggerChildren: 0.1 } } }}>
           {[
-            { n: '500+',  desc: 'Produk recycle terjual melalui marketplace Recraft.' },
+            { n: '500+', desc: 'Produk recycle terjual melalui marketplace Recraft.' },
             { n: '2 ton+', desc: 'Sampah anorganik terpilah berhasil dikumpulkan dari masyarakat.' },
             { n: '3 ton+', desc: 'Emisi karbon yang berhasil diselamatkan dari pengelolaan sampah.' },
             { n: '1 ton+', desc: 'Sampah makanan/organik yang berhasil dikelola melalui Bio-Sub Maggot.' },
@@ -206,7 +230,9 @@ export default function Recraft() {
           </div>
         </div>
 
-        <ImageSlot label="Screenshot — Dashboard Carbon Tracker / Statistik Dampak" />
+        <img src="/recraft/dashboard.png"
+          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top center', display: 'block' }}
+          alt="Screenshot — Dashboard Carbon Tracker / Statistik Dampak" />
       </Section>
 
       {/* ── TECH STACK ── */}
@@ -230,9 +256,9 @@ export default function Recraft() {
             </motion.span>
           ))}
         </div>
-        <div style={{ marginTop: 24 }}>
+        {/* <div style={{ marginTop: 24 }}>
           <ImageSlot label="Screenshot — Arsitektur Sistem / ERD Database Recraft" aspectRatio="16/6" />
-        </div>
+        </div> */}
       </Section>
     </CaseStudyLayout>
   )
