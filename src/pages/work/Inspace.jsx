@@ -56,6 +56,8 @@ export default function Inspace() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: 24,
         }}
       >
         <InspaceHero accent={ACCENT} />
@@ -231,18 +233,18 @@ function InspaceHero({ accent }) {
           background: `${accent}15`, border: `1px solid ${accent}30`,
         }} />
       ))}
-      <div style={{ position: 'relative', zIndex: 2 }}>
+      <div className="cs-hero-text" style={{ position: 'relative', zIndex: 2, flex: '1 1 auto', minWidth: 0 }}>
         <div style={{ fontSize: 11, letterSpacing: '0.14em', color: accent, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase' }}>
           HMSI Institut Teknologi Kalimantan
         </div>
-        <h1 style={{ fontSize: 28, fontWeight: 800, lineHeight: 1.25, marginBottom: 12, color: 'white' }}>
+        <h1 style={{ fontSize: 'clamp(20px, 5vw, 28px)', fontWeight: 800, lineHeight: 1.25, marginBottom: 12, color: 'white' }}>
           INSPACE 2026
         </h1>
         <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, maxWidth: 300 }}>
           Information System Path to Creativity — Event kompetisi nasional tahunan HMSI ITK.
         </p>
       </div>
-      <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div className="cs-hero-side" style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', gap: 10, flexShrink: 0 }}>
         {['UI/UX Competition', 'Business Plan', 'Creative Video'].map((comp) => (
           <div key={comp} style={{
             padding: '8px 16px', borderRadius: 10,

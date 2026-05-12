@@ -63,7 +63,8 @@ export default function PawCare() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          gap: 32,
+          flexWrap: 'wrap',
+          gap: 24,
           minHeight: 260,
         }}
       >
@@ -270,11 +271,11 @@ export default function PawCare() {
 function PawCareHero({ accent }) {
   return (
     <>
-      <div style={{ color: 'white' }}>
+      <div className="cs-hero-text" style={{ color: 'white', flex: '1 1 auto', minWidth: 0 }}>
         <div style={{ fontSize: 11, letterSpacing: '0.12em', color: accent, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase' }}>
           Figma Design · Pet Care App
         </div>
-        <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.3, marginBottom: 12 }}>
+        <h1 style={{ fontSize: 'clamp(20px, 5vw, 26px)', fontWeight: 700, lineHeight: 1.3, marginBottom: 12 }}>
           PawCare 🐾<br />
           <span style={{ color: accent }}>Titip dengan Tenang.</span>
         </h1>
@@ -282,8 +283,8 @@ function PawCareHero({ accent }) {
           Monitoring real-time penitipan hewan peliharaan — untuk pet owner yang peduli.
         </p>
       </div>
-      {/* Phone mockup */}
-      <div style={{
+      {/* Phone mockup — disembunyikan di mobile via CSS */}
+      <div className="cs-hero-phone" style={{
         width: 110, background: '#1c1100', borderRadius: 24,
         padding: 8, boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
         flexShrink: 0,

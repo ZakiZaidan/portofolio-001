@@ -63,6 +63,7 @@ export default function Recraft() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          flexWrap: 'wrap',
           gap: 32,
         }}
       >
@@ -267,25 +268,28 @@ export default function Recraft() {
 function RecraftHero({ accent }) {
   return (
     <>
-      <div style={{ color: 'white' }}>
+      {/* Teks kiri */}
+      <div className="cs-hero-text" style={{ color: 'white', flex: '1 1 auto', minWidth: 0 }}>
         <div style={{ fontSize: 11, letterSpacing: '0.12em', color: accent, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase' }}>
           recraft.id — Live
         </div>
-        <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.3, marginBottom: 12 }}>
+        <h1 style={{ fontSize: 'clamp(20px, 5vw, 26px)', fontWeight: 700, lineHeight: 1.3, marginBottom: 12 }}>
           Sampah Jadi Bermanfaat.<br />Bumi Jadi Lebih Baik.
         </h1>
         <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, maxWidth: 280 }}>
-          Platform daur ulang & pengelolaan sampah berkelanjutan untuk masyarakat Balikpapan.
+          Platform daur ulang &amp; pengelolaan sampah berkelanjutan untuk masyarakat Balikpapan.
         </p>
       </div>
-      <div style={{ display: 'flex', gap: 16 }}>
+
+      {/* Stat cards kanan — wrap ke bawah saat mobile */}
+      <div className="cs-hero-stats" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
         {['2 ton+\nSampah', '3 ton+\nCarbon', '500+\nProduk'].map((stat) => {
           const [n, l] = stat.split('\n')
           return (
-            <div key={l} style={{
+            <div key={l} className="cs-hero-stat-item" style={{
               display: 'flex', flexDirection: 'column', alignItems: 'center',
               background: 'rgba(255,255,255,0.08)', borderRadius: 12,
-              padding: '16px 20px', minWidth: 80,
+              padding: '16px 20px', minWidth: 76, flex: '1 1 76px',
             }}>
               <span style={{ fontSize: 20, fontWeight: 700, color: accent }}>{n}</span>
               <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', marginTop: 4 }}>{l}</span>

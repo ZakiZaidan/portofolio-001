@@ -72,7 +72,8 @@ export default function Covid() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          gap: 32,
+          flexWrap: 'wrap',
+          gap: 24,
         }}
       >
         <CovidHero accent={ACCENT} />
@@ -232,24 +233,24 @@ export default function Covid() {
 function CovidHero({ accent }) {
   return (
     <>
-      <div style={{ color: 'white' }}>
+      <div className="cs-hero-text" style={{ color: 'white', flex: '1 1 auto', minWidth: 0 }}>
         <div style={{ fontSize: 11, letterSpacing: '0.12em', color: accent, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase' }}>
           Python · Streamlit · Supabase
         </div>
-        <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.3, marginBottom: 12 }}>
+        <h1 style={{ fontSize: 'clamp(20px, 5vw, 26px)', fontWeight: 700, lineHeight: 1.3, marginBottom: 12 }}>
           COVID-19 Indonesia<br />Interactive Dashboard
         </h1>
         <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, maxWidth: 280 }}>
           6 modul analisis data: geospasial, vaksinasi, kapasitas RS, dan dampak kebijakan — semuanya real-time.
         </p>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+      <div className="cs-hero-side" style={{ display: 'flex', flexDirection: 'column', gap: 8, flexShrink: 0, minWidth: 200 }}>
         {[
           { label: '🏥 Kapasitas Kesehatan', v: 72 },
           { label: '💉 Vaksinasi Nasional',  v: 88 },
           { label: '🗺️ Sebaran Provinsi',   v: 56 },
         ].map((m) => (
-          <div key={m.label} style={{ minWidth: 200 }}>
+          <div key={m.label} style={{ minWidth: 180 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
               <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)' }}>{m.label}</span>
               <span style={{ fontSize: 11, color: accent, fontWeight: 700 }}>{m.v}%</span>

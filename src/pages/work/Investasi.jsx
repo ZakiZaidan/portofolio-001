@@ -66,7 +66,8 @@ export default function Investasi() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          gap: 32,
+          flexWrap: 'wrap',
+          gap: 24,
         }}
       >
         <InvestasiHero accent={ACCENT} />
@@ -229,18 +230,18 @@ export default function Investasi() {
 function InvestasiHero({ accent }) {
   return (
     <>
-      <div style={{ color: 'white' }}>
+      <div className="cs-hero-text" style={{ color: 'white', flex: '1 1 auto', minWidth: 0 }}>
         <div style={{ fontSize: 11, letterSpacing: '0.12em', color: accent, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase' }}>
           Laravel · React · Leaflet · Gemini AI
         </div>
-        <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.3, marginBottom: 12 }}>
+        <h1 style={{ fontSize: 'clamp(20px, 5vw, 26px)', fontWeight: 700, lineHeight: 1.3, marginBottom: 12 }}>
           Portal Potensi Investasi<br />Kota Balikpapan
         </h1>
         <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, maxWidth: 280 }}>
           Platform informasi investasi lengkap dengan peta interaktif, AI chatbot, dan kalkulator ROI.
         </p>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 6, minWidth: 180 }}>
+      <div className="cs-hero-side" style={{ display: 'flex', flexDirection: 'column', gap: 6, minWidth: 180, flexShrink: 0 }}>
         {/* Map preview */}
         <div style={{
           background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.3)',

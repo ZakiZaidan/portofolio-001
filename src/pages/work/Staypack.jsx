@@ -54,7 +54,8 @@ export default function Staypack() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          gap: 32,
+          flexWrap: 'wrap',
+          gap: 24,
           minHeight: 260,
         }}
       >
@@ -259,20 +260,20 @@ export default function Staypack() {
 function StaypackHero({ accent }) {
   return (
     <>
-      <div style={{ color: 'white' }}>
+      <div className="cs-hero-text" style={{ color: 'white', flex: '1 1 auto', minWidth: 0 }}>
         <div style={{ fontSize: 11, letterSpacing: '0.12em', color: accent, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase' }}>
           Figma Design · Mobile UX
         </div>
-        <h1 style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.3, marginBottom: 12 }}>
+        <h1 style={{ fontSize: 'clamp(20px, 5vw, 26px)', fontWeight: 700, lineHeight: 1.3, marginBottom: 12 }}>
           Staypack<br />
           <span style={{ color: accent }}>Stay. Pack. Explore.</span>
         </h1>
         <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, maxWidth: 280 }}>
-          Komunitas & trip planner untuk backpacker yang selalu ingin jalan — solo atau bareng.
+          Komunitas &amp; trip planner untuk backpacker yang selalu ingin jalan — solo atau bareng.
         </p>
       </div>
-      {/* Phone wireframe mockup */}
-      <div style={{
+      {/* Phone wireframe mockup — disembunyikan di mobile via CSS */}
+      <div className="cs-hero-phone" style={{
         width: 110, background: '#0d1a1a', borderRadius: 24,
         padding: 8, boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
         flexShrink: 0,
@@ -281,7 +282,7 @@ function StaypackHero({ accent }) {
           <div style={{ fontSize: 8, color: accent, fontWeight: 700, marginBottom: 6 }}>STAYPACK</div>
           {[
             { emoji: '🏔️', title: 'Trekking Rinjani', sub: '12 orang bergabung' },
-            { emoji: '🏝️', title: 'Labuan Bajo Trip', sub: '5 hari · Budget trip' },
+            { emoji: '🏕️', title: 'Labuan Bajo Trip', sub: '5 hari · Budget trip' },
             { emoji: '🌿', title: 'Jungle Sumatra',   sub: 'Gear review tersedia' },
           ].map((item) => (
             <div key={item.title} style={{

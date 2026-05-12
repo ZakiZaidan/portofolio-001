@@ -580,7 +580,44 @@
   .cs-hero {
     margin-bottom: 36px;
     border-radius: var(--radius-lg);
+    /* Override padding inline-style dari Recraft/Inspace hero */
+    padding: 24px 20px !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
   }
+
+  /* Teks hero (judul + desc) ambil full width dulu, stat cards ke bawah */
+  .cs-hero-text {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  /* Stat cards baris mobile */
+  .cs-hero-stats {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    width: 100%;
+  }
+
+  .cs-hero-stat-item {
+    flex: 1 1 70px;
+    min-width: 70px;
+    padding: 12px 14px !important;
+  }
+
+  /* Side content (badge list, progress bars, card boxes) tampil penuh di bawah */
+  .cs-hero-side {
+    width: 100%;
+    flex-shrink: 0 !important;
+    min-width: 0 !important;
+  }
+
+  /* Phone mockup disembunyikan di mobile (terlalu kecil dan overflow) */
+  .cs-hero-phone {
+    display: none !important;
+  }
+
 
   /* ── Section spacing ──────────────────────── */
   .cs-section {
